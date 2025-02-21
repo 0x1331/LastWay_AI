@@ -1,7 +1,7 @@
 LASTWAY
 Version 1, 21 February 2025
 
-Copyright (C) 2007 Free Software Foundation, Inc.  
+Copyright (C) 2025 network222.  
 Everyone is permitted to copy and distribute verbatim copies  
 of this license document, but changing it is not allowed.  
 
