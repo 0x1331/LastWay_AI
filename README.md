@@ -5,7 +5,8 @@ Welcome to **LastWay_AI**! This project is an innovative solution combining Augm
 ---
 
 ## 🛠️ **Features**:
-
+- Frontend: HTML, CSS
+- Backend: Python (Flask)
 - **Augmented Reality (AR) Integration**: Cutting-edge AR technology that overlays digital information onto the real world.
 - **Artificial Intelligence (AI)**: Smart AI algorithms that adapt to the user, offering personalized recommendations and improving experiences.
 - **Flask Web Application**: Easily deployable, scalable, and interactive web application for a smooth user interface.
