@@ -1,4 +1,4 @@
-# 🚀 **LastWay_AI** - AR + AI Project
+# 🚀 **LastWay_AI** 
 
 Welcome to **LastWay_AI**! This project is an innovative solution combining Augmented Reality (AR) and Artificial Intelligence (AI), designed to make life smarter and more efficient. Our goal is to develop a seamless AR experience that integrates AI for enhanced user interaction and functionality. Join us on this exciting journey to push the boundaries of AR technology!
 
