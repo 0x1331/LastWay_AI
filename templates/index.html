@@ -6,7 +6,6 @@
   <title>LastWay Neuro v1 - Dark Theme</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    /* Общие стили */
     body {
       font-family: 'Roboto', sans-serif;
       background: linear-gradient(135deg, #121212, #1d1d1d);
@@ -48,7 +47,7 @@
       overflow-y: auto;
       background: #181818;
     }
-    /* Стили сообщений */
+    
     .message {
       display: flex;
       align-items: flex-start;
@@ -97,7 +96,6 @@
       color: #e0e0e0;
       border-bottom-right-radius: 0;
     }
-    /* Индикатор набора текста и загрузки */
     .typing-indicator {
       font-style: italic;
       color: #aaa;
@@ -116,7 +114,6 @@
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
-    /* Нижняя панель ввода */
     .input-area {
       padding: 12px 15px;
       background: #222;
@@ -175,12 +172,10 @@
       height: 28px;
       fill: #4caf50;
     }
-    /* Анимация появления сообщений */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    /* Стиль для кружка с аватаркой */
     .user-avatar {
       position: absolute;
       top: 20px;
@@ -204,7 +199,6 @@
       width: 100%;
       border-radius: 50%;
     }
-    /* Стили для меню */
     .menu {
       position: absolute;
       top: 75px;
@@ -236,7 +230,6 @@
       <h1>LastWay Neuro v1</h1>
     </div>
     <div id="chatbox">
-      <!-- Сообщения будут появляться здесь -->
     </div>
     <div class="input-area">
       <div class="bottom-buttons">
@@ -254,12 +247,10 @@
     </div>
   </div>
 
-  <!-- Кнопка аватара пользователя -->
   <div class="user-avatar" onclick="toggleMenu()">
     <img class="avatar-img" src="https://www.w3schools.com/w3images/avatar2.png" alt="User Avatar">
   </div>
 
-  <!-- Меню -->
   <div class="menu" id="menu">
     <div class="menu-item">Настройки</div>
     <div class="menu-item">Управление памятью</div>
@@ -267,7 +258,6 @@
   </div>
 
   <script>
-    // Обработчик нажатия Enter для отправки сообщения
     document.getElementById('input').addEventListener('keydown', function(event) {
       if (event.key === 'Enter') {
         event.preventDefault();
@@ -283,7 +273,6 @@
       const chatbox = document.getElementById('chatbox');
       const timestamp = new Date().toLocaleTimeString();
 
-      // Сообщение пользователя
       const humanMsg = document.createElement('div');
       humanMsg.classList.add('message', 'human');
       humanMsg.innerHTML = `
@@ -297,7 +286,6 @@
       chatbox.scrollTop = chatbox.scrollHeight;
       inputField.value = '';
 
-      // Создаем контейнер для индикатора набора текста
       const typingContainer = document.createElement('div');
       typingContainer.classList.add('message', 'ai');
       typingContainer.innerHTML = `
@@ -312,7 +300,6 @@
       chatbox.appendChild(typingContainer);
       chatbox.scrollTop = chatbox.scrollHeight;
 
-      // Отправка запроса на сервер
       try {
         const response = await fetch('/get_response', {
           method: 'POST',
@@ -321,11 +308,9 @@
         });
         const data = await response.json();
         
-        // Удаляем индикатор набора текста
         typingContainer.remove();
         const aiTimestamp = new Date().toLocaleTimeString();
 
-        // Сообщение от AI
         const aiMsg = document.createElement('div');
         aiMsg.classList.add('message', 'ai');
         aiMsg.innerHTML = `
@@ -342,7 +327,6 @@
       }
     }
 
-    // Управление меню
     function toggleMenu() {
       const menu = document.getElementById('menu');
       menu.classList.toggle('active');
