@@ -1,27 +1,14 @@
-����� �뢮�� ������ �� ��࠭ (ECHO) ����祭.
-
-# Логи и отладочная информация
 logs/
 debug.log
-
-# Файлы данных и временные файлы
 data/
 *.csv
 *.json
 *.xml
-
-# Кеши Flask
 instance/
 *.pid
-
-# Docker (если используешь)
 docker-compose.override.yml
-
-# Файлы, загружаемые пользователями
 uploads/
 media/
-
-# Если используешь Jupyter Notebook
 .ipynb_checkpoints/
 result/
 myenv/
