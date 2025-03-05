@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 
 def parse_xml(input_file, output_file):
     with open(input_file, 'r', encoding='utf-8') as f:
-        # Загружаем XML-данные
+        
         tree = ET.parse(f)
         root = tree.getroot()
 
@@ -13,7 +13,7 @@ def parse_xml(input_file, output_file):
                 revision = page.find("revision")
                 text = revision.find("text").text if revision is not None else ""
                 
-                # Если текст статьи есть, пишем в файл
+                
                 if text:
                     out_file.write(f"Title: {title}\n")
                     out_file.write(f"Text: {text}\n\n")
