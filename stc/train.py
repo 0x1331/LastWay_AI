@@ -1,12 +1,10 @@
 from transformers import GPT2LMHeadModel, GPT2Tokenizer, Trainer, TrainingArguments
 from datasets import load_dataset
 
-# Загрузка модели GPT-2
 model_name = "gpt2"
 tokenizer = GPT2Tokenizer.from_pretrained(model_name)
 model = GPT2LMHeadModel.from_pretrained(model_name)
 
-# Загрузка и подготовка датасета
 def load_and_preprocess_data():
     dataset = load_dataset('text', data_files={'train': 'data/processed_data.txt'}, split='train')
     def tokenize_function(examples):
@@ -16,7 +14,6 @@ def load_and_preprocess_data():
 
 dataset = load_and_preprocess_data()
 
-# Настройка параметров обучения
 training_args = TrainingArguments(
     output_dir="./results",          # директория для сохранения результатов
     evaluation_strategy="epoch",     # периодичность оценок
@@ -27,12 +24,10 @@ training_args = TrainingArguments(
     weight_decay=0.01,               # регуляризация
 )
 
-# Обучение модели
 trainer = Trainer(
     model=model,
     args=training_args,
     train_dataset=dataset,
 )
 
-# Запуск обучения
 trainer.train()
